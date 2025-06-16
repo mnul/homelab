@@ -2,8 +2,10 @@
 This is my humble attempt at infrastructure as code for my Proxmox server. The goal is to document all the Containers (and possibly VMs in the future) with their respective settings. 
 
 > [!NOTE]
-> This Repo is to be used with Ansible and Semaphore
+> This Repo is to be used with Ansible and Semaphore \
 > use at your own risk :wink:
+
+This repo goes along with my [homelab-ansible](https://github.com/mnul/homelab-ansible) repo for all the automation part in Ansible.
 
 ### ToDos
 - [ ] Start with test-server

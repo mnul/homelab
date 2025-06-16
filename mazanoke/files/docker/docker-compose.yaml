@@ -2,5 +2,10 @@ services:
   mazanoke:
     container_name: mazanoke
     image: ghcr.io/civilblur/mazanoke:latest
+    # --> Use this for basic user/pass authenticaton
+    # environment:
+    #   - USERNAME=${USER?Error: please define user}
+    #   - PASSWORD=${PASS?Error: please define password}
+    #   <-- basic auth
     ports:
-      - "80:80"
+      - "${PORT-3474}:80"
