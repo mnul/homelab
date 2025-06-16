@@ -10,3 +10,22 @@ This is my humble attempt at infrastructure as code for my Proxmox server. The g
 - [ ] Migrate currently running servers to the repo
 - [ ] document how everything is laid out and how setup works
 
+## Basic structure of the repo
+
+The repo follows a basic structure
+
+```
+homelab/
+├── servername/
+│   ├── config/
+│   │   └── main.yaml        # Public definition for server
+│   └── files/              # Mirrors the root (/) of the server
+│       └── docker/
+│           ├── docker-compose.yaml
+│           └── .env.example
+└── servername2/
+    ├── config/
+    │   └── main.yaml
+    └── files/
+        └── ...
+```
