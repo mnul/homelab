@@ -36,7 +36,9 @@ services:
       PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000
       PAPERLESS_TIKA_ENDPOINT: http://tika:9998
       # for Authentic
-      PAPERLESS_SOCIALACCOUNT_PROVIDERS: ${PAPERLESS_SOCIALACCOUNT_PROVIDERS}
+      PAPERLESS_SOCIALACCOUNT_PROVIDERS_FILE: /run/secrets/paperless_oidc_config
+    secrets:
+      - paperless_oidc_config  
 
   gotenberg:
     image: docker.io/gotenberg/gotenberg:8.20
@@ -50,5 +52,10 @@ services:
   tika:
     image: docker.io/apache/tika:latest
     restart: unless-stopped
+
+secrets:
+  paperless_oidc_config:
+    file: ./paperless_oidc_config.json
+
 volumes:
   redisdata:

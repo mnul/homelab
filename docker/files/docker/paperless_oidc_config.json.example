@@ -1,0 +1,16 @@
+{
+    "openid_connect": {
+        "APPS": [
+            {
+                "provider_id": "authentik",
+                "name": "myprovider",
+                "client_id": "...",
+                "secret": "...",
+                "settings": {
+                    "server_url": "https://my.fqdn/..."
+                }
+            }
+        ],
+        "OAUTH_PKCE_ENABLED": "True"
+    }
+}
