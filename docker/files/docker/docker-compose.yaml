@@ -35,10 +35,11 @@ services:
       PAPERLESS_TIKA_ENABLED: 1
       PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000
       PAPERLESS_TIKA_ENDPOINT: http://tika:9998
-      # for Authentic
+      # ---> for Authentic
+      PAPERLESS_APPS: allauth.socialaccount.providers.openid_connect
       PAPERLESS_SOCIALACCOUNT_PROVIDERS_FILE: /run/secrets/paperless_oidc_config
     secrets:
-      - paperless_oidc_config  
+      - paperless_oidc_config  # <--- for Authentic
 
   gotenberg:
     image: docker.io/gotenberg/gotenberg:8.20
@@ -53,9 +54,11 @@ services:
     image: docker.io/apache/tika:latest
     restart: unless-stopped
 
+# ---> for Authentic
 secrets:
   paperless_oidc_config:
     file: ./paperless_oidc_config.json
+# <--- for Authentic
 
 volumes:
   redisdata:
